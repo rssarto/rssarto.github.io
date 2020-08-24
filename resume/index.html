@@ -1,1354 +1,629 @@
-<!doctype html>
 <html>
-    
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"
-        />
-        <title>Ricardo Soares Sarto</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-        />
-        <style>
-            /********************************************
-            * 	reset from
-            * 	http://meyerweb.com/eric/tools/css/reset/
-            *******************************************/
-            
-            html,
-            body,
-            div,
-            span,
-            applet,
-            object,
-            iframe,
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6,
-            p,
-            blockquote,
-            pre,
-            a,
-            abbr,
-            acronym,
-            address,
-            big,
-            cite,
-            code,
-            del,
-            dfn,
-            em,
-            img,
-            ins,
-            kbd,
-            q,
-            s,
-            samp,
-            small,
-            strike,
-            strong,
-            sub,
-            sup,
-            tt,
-            var,
-            b,
-            u,
-            i,
-            center,
-            dl,
-            dt,
-            dd,
-            ol,
-            ul,
-            li,
-            fieldset,
-            form,
-            label,
-            legend,
-            table,
-            caption,
-            tbody,
-            tfoot,
-            thead,
-            tr,
-            th,
-            td,
-            article,
-            aside,
-            canvas,
-            details,
-            embed,
-            figure,
-            figcaption,
-            footer,
-            header,
-            hgroup,
-            menu,
-            nav,
-            output,
-            ruby,
-            section,
-            summary,
-            time,
-            mark,
-            audio,
-            video {
-                margin: 0;
-                padding: 0;
-                border: 0;
-                font-size: 100%;
-                vertical-align: baseline;
-            }
-            
-            article,
-            aside,
-            details,
-            figcaption,
-            figure,
-            footer,
-            header,
-            hgroup,
-            menu,
-            nav,
-            section {
-                display: block;
-            }
-            
-            body {
-                line-height: 1;
-            }
-            
-            ol,
-            ul {
-                list-style: none;
-            }
-            
-            blockquote,
-            q {
-                quotes: none;
-            }
-            
-            blockquote:before,
-            blockquote:after,
-            q:before,
-            q:after {
-                content: none;
-            }
-            
-            table {
-                border-collapse: collapse;
-                border-spacing: 0;
-            }
-            
-            
-            /****************
-            *	COMMONS
-            ****************/
-            
-            body,
-            html {
-                font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-                font-size: 13px;
-                color: #40484f;
-                font-weight: 400;
-                letter-spacing: 0;
-                line-height: 1.46153846;
-                text-align: left;
-                -webkit-text-size-adjust: 100%;
-            }
-            
-            p {
-                display: block;
-                margin-bottom: 1.3em;
-            }
-            
-            a {
-                color: #0095ff;
-                text-decoration: none;
-            }
-            
-            a:hover {
-                color: #0c65a5;
-                text-decoration: underline;
-            }
-            
-            ul {
-                margin-top: 1rem;
-            }
-            
-            li {
-                list-style-type: square;
-                list-style-position: outside;
-                margin-left: 1.3em;
-            }
-            
-            .highlights>li>p {
-                margin-bottom: 0.5em;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            h2 {
-                font-size: 1.67rem;
-            }
-            
-            h3 {
-                font-size: 1.27rem;
-            }
-            
-            em {
-                color: #757575;
-            }
-            
-            blockquote {
-                margin-bottom: 1em;
-            }
-            
-            strong {
-                font-weight: 700;
-            }
-            
-            
-            /* main container */
-            
-            #resume {
-                padding: 1rem;
-                margin-top: 2rem;
-            }
-            
-            
-            /* every section wrapper */
-            
-            .section {
-                margin-bottom: 1rem;
-            }
-            
-            section .location {
-                margin-right: .5em;
-                color: #606d76;
-                font-weight: 700;
-            }
-            
-            #contact {
-                margin-top: .5rem;
-            }
-            
-            #profiles .item {
-                padding: 0;
-            }
-            
-            #header>#profiles,
-            #header>#contact,
-            #skills,
-            #languages,
-            #interests {
-                display: -webkit-box;
-                display: -moz-box;
-                display: -ms-flexbox;
-                display: -webkit-flex;
-                display: flex;
-                -webkit-flex-flow: row wrap;
-                flex-flow: row wrap;
-                -webkit-justify-content: flex-start;
-                justify-content: flex-start;
-            }
-            
-            #header>div {
-                line-height: 1.5;
-            }
-            
-            #header>div>div {
-                margin-right: 1.2em;
-            }
-            
-            #header h1.name {
-                font-size: 2.8rem;
-                font-weight: 100;
-                line-height: 100%;
-            }
-            
-            #header h2.label {
-                color: #202931;
-                font-size: 1.47rem;
-                font-weight: 300;
-            }
-            
-            #header .picture {
-                width: 11em;
-                float: right;
-                border-radius: 4px;
-            }
-            
-            .main-summary {
-                background: #f1f8ff;
-                padding: 1.2em 1em;
-                margin-top: 1rem;
-            }
-            
-            .main-summary p {
-                margin: .15em 0 0;
-            }
-            
-            h2.section-title {
-                display: inline-block;
-                background: #fff;
-                padding: 0 1em 0.3em 0;
-                color: #ff6d1f;
-                text-transform: uppercase;
-                font-weight: 600;
-                border: none;
-                font-size: .9rem;
-            }
-            
-            .section>header {
-                position: relative;
-            }
-            
-            .fa {
-                margin-right: 0.25em;
-            }
-            
-            .section>header::after {
-                position: absolute;
-                left: 0;
-                top: .7em;
-                height: 1px;
-                background: #ccc;
-                content: "";
-                width: 100%;
-                z-index: -100;
-                display: block;
-            }
-            
-            .section.main-summary>section {
-                margin: 0;
-            }
-            
-            .section>section>header {
-                font-size: 1.38rem;
-                position: relative;
-                margin-top: .7em;
-            }
-            
-            .section>section>header:first-of-type {
-                margin: 0;
-            }
-            
-            .section>section>header .space-left {
-                position: absolute;
-                left: -1.56rem;
-                top: 5px;
-                color: #aaa;
-                line-height: 1;
-                opacity: 0;
-            }
-            
-            .position,
-            .company,
-            .organization,
-            .institution,
-            .date,
-            .area,
-            .studyType,
-            .title,
-            .awarder {
-                display: inline;
-            }
-            
-            .position,
-            .studyType,
-            .area,
-            .title,
-            .language,
-            .name {
-                font-weight: 600;
-            }
-            
-            .company::before,
-            .institution::before,
-            .organization::before,
-            .awarder::before {
-                content: "at "
-            }
-            
-            .company,
-            .institution,
-            .organization,
-            .awarder {
-                color: #606d76;
-                font-weight: 400;
-            }
-            
-            .section header .date {
-                font-size: 1rem;
-                display: inline-table;
-                padding: .1em 0;
-                font-weight: 600;
-            }
-            
-            ul.keywords,
-            ul.courses {
-                margin-top: .5em;
-            }
-            
-            ul.keywords li,
-            ul.courses li {
-                display: inline-block;
-                margin: 2px 2px 2px 0;
-                padding: 4px 5px 5px;
-                font-size: .9rem;
-                line-height: 1;
-                text-transform: lowercase;
-                color: #3e6d8e;
-                background-color: #dfeaf1;
-                border: 0 solid #dfeaf1;
-                white-space: nowrap;
-            }
-            
-            ul.keywords li:hover,
-            ul.courses li:hover {
-                background: #dfeaf0;
-            }
-            
-            .item {
-                padding: .5em 0;
-            }
-            
-            .gpa {
-                padding-bottom: .5em;
-            }
-            
-            .fa.social {
-                font-size: 1.1em;
-            }
-            
-            
-            /* Social Media Brand Colors */
-            
-            .google-plus {
-                color: #dd4b39;
-            }
-            
-            .tumblr {
-                color: #32506d;
-            }
-            
-            .foursquare {
-                color: #0072b1;
-            }
-            
-            .facebook {
-                color: #3b5998;
-            }
-            
-            .linkedin {
-                color: #007bb6;
-            }
-            
-            .pinterest {
-                color: #cb2027;
-            }
-            
-            .dribbble {
-                color: #ea4c89;
-            }
-            
-            .instagram {
-                color: #517fa4;
-            }
-            
-            .twitter {
-                color: #00aced;
-            }
-            
-            .soundcloud {
-                color: #ff3a00;
-            }
-            
-            .wordpress {
-                color: #21759b;
-            }
-            
-            .youtube {
-                color: #bb0000;
-            }
-            
-            .github {
-                color: #171515;
-            }
-            
-            .stack-overflow {
-                color: #828386;
-                position: relative;
-            }
-            
-            .flickr {
-                color: #ff0084;
-            }
-            
-            .stack-overflow::after {
-                position: absolute;
-                left: 0;
-                content: '\f16c';
-                color: #f68a1f;
-                overflow: hidden;
-                height: 100%;
-            }
-            
-            .telegram {
-                color: #2291c3;
-            }
-            
-            #languages .item,
-            #skills .item,
-            #interests .item {
-                width: 15em;
-                padding: 0 .5em .5em 0;
-                border-bottom: none;
-            }
-            
-            #skills .item {
-                width: 16em;
-            }
-            
-            #skills .item .keywords {
-                width: 15em;
-            }
-            
-            
-            /* Skill chart */
-            
-            .level {
-                margin-bottom: .5em;
-            }
-            
-            .level .bar {
-                border: 1px solid #ddd;
-                display: block;
-                width: 10em;
-                height: 5px;
-                position: relative;
-            }
-            
-            .level .bar::after {
-                position: absolute;
-                content: " ";
-                top: 0;
-                left: 0;
-                background: black;
-                height: 5px;
-            }
-            
-            .level.beginner .bar::after {
-                background: #EB5F51;
-                width: 2.5em;
-            }
-            
-            .level.intermediate .bar::after {
-                background: #ffdf1f;
-                width: 5em;
-            }
-            
-            .level.advanced .bar::after,
-            .level.fluent .bar::after {
-                background: #5CB85C;
-                width: 7.5em;
-            }
-            
-            .level.master .bar::after,
-            .level.native.speaker .bar::after {
-                background: #59C596;
-                width: 10em;
-            }
-            
-            #references .item {
-                padding-left: .5em;
-                border-left: 5px solid #ff6d1f;
-            }
-            
-            .toggle-item {
-              visibility: hidden;
-            }
-            
-            /******************
-            *	HELPER CLASSES
-            ******************/
-            
-            .clear::after {
-                content: "";
-                display: table;
-                clear: both;
-            }
-            
-            .display {
-                display: block;
-                opacity: 1 !important;
-            }
-            
-            .margin1 {
-                margin-bottom: .5rem;
-            }
-            
-            
-            /****************
-            *		TABLET
-            ****************/
-            
-            @media screen and (min-width: 602px) {
-                #resume {
-                    width: 80%;
-                    margin: 0 auto;
-                }
-            }
-            
-            
-            /****************
-            *		LAPTOP
-            ****************/
-            
-            @media screen and (min-width: 1025px) {
-                li {
-                    margin-left: 1.5em;
-                }
-                #resume {
-                    width: 820px;
-                    margin: 2rem auto;      
-                }
-                .section>section>header .space-left {
-                    opacity: 1;
-                    cursor: pointer;
-                }
-                .section>section {
-                    margin-left: 1.67rem;
-                }
-                .toggle-item {
-                    transform: translate(-9999px);
-                }
-                .toggle-item+label {
-                    display: block;
-                    margin-top: -16px;
-                }
-                .toggle-item:checked+label:after {
-                    content: '\f0d7';
-                }
-                .toggle-item+label:after {
-                    float: left;
-                    cursor: pointer;
-                    margin-left: -20px;
-                    color: #aaa;
-                    font-size: 16px;
-                    content: '\f0da';
-                    font-family: Fontawesome;
-                }
-                .toggle-item~.item {
-                    height: 0;
-                    opacity: 0;
-                }
-                .toggle-item:checked~.item {
-                    height: auto;
-                    opacity: 1;
-                    transition: all .5s linear;
-                }
-                .company::before,
-                .institution::before,
-                .organization::before,
-                .awarder::before {
-                    content: "| ";
-                }
-                .header-left {
-                    float: left;
-                    width: 70%;
-                    word-break: normal;
-                }
-                .section header .date {
-                    float: right;
-                    padding: .2em;
-                }
-                .display {
-                    display: none;
-                }
-                .display:not(.none) {
-                    display: block;
-                }
-            }
-            
-            @media print {
-                #resume {
-                    margin: 0;
-                    padding: 0;
-                    -ms-word-wrap: break-word;
-                    word-wrap: break-word;
-                    line-height: 1.3;
-                    /*font-family: Arial, Georgia, "Lucida Grande", sans-serif;*/
-                }
-                @page {
-                    margin: 1cm 1.4cm;
-                }
-                .item-count {
-                    display: none;
-                }
-                .company::before,
-                .institution::before,
-                .organization::before,
-                .awarder::before {
-                    content: "at ";
-                }
-                .main-summary {
-                    padding: 2rem 0;
-                }
-                .section {
-                    margin: .8rem 0;
-                    padding: 0;
-                }
-                .section header {
-                    padding-bottom: .15rem;
-                }
-                .section .location {
-                    padding-bottom: .15rem;
-                }
-                .stack-overflow::after {
-                    content: "";
-                }
-                .fa.social {
-                    color: #828386;
-                }
-                ul {
-                    margin-top: .4em;
-                }
-                ul,
-                li {
-                    padding: 0;
-                }
-                ul.keywords li,
-                ul.courses li {
-                    margin: 0;
-                    padding: 0;
-                    font-size: .8rem;
-                    text-transform: lowercase;
-                }
-                ul.keywords li::after,
-                ul.courses li::after {
-                    padding: 0 0 0 .1rem;
-                    content: " |";
-                }
-                ul.keywords::before,
-                ul.courses::before {
-                    font-size: .8rem;
-                    font-weight: 600;
-                }
-                ul.keywords::before {
-                    content: "Skills acquired: ";
-                }
-                #skills .keywords::before {
-                    content: '';
-                }
-                .section p {
-                    margin: 0;
-                    padding: 0;
-                }
-                ul.courses::before {
-                    content: "Major courses: ";
-                }
-                ul.keywords li:last-of-type::after,
-                ul.courses li:last-of-type::after {
-                    content: "";
-                }
-                .level em {
-                    font-style: normal;
-                    padding: .1em 0;
-                }
-                .level .bar {
-                    display: none;
-                }
-                #profiles .item {
-                    padding: 0;
-                }
-                .item.display {
-                    display: block;
-                    opacity: 1 !important;
-                }
-            }
-        </style>
-    </head>
-    
-    <body>
-        <div id="resume">
-            <header id="header" class="clear">
-                <img class="picture" src="ricardo.jpg"
-                alt="Ricardo Soares Sarto" />
-                <div class="middle">
-                    	<h1 class="name">Ricardo Soares Sarto</h1>
 
-                    	<h2 class="label">Analyst Developer</h2>
+<head>
+	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+	<meta name=Generator content="Microsoft Word 15 (filtered)">
+	<style>
+		<!--
+		/* Font Definitions */
+		@font-face {
+			font-family: "Cambria Math";
+			panose-1: 2 4 5 3 5 4 6 3 2 4;
+		}
 
-                </div>	<span class="location">
-    			<span class="address">Rua Municipal, 678,</span> 	<span class="postalCode">03661-000,</span> 
-                <span
-                class="city">São Paulo,</span>	<span class="region">São Paulo</span> 	<span class="countryCode">BR</span> </span>
-                    <div
-                    id="contact">
-                        <div class="email">	<span class="fa fa-envelope-o"></span>
-	<a href="mailto:ricardo.soares.sarto@gmail.com">ricardo.soares.sarto@gmail.com</a>
+		@font-face {
+			font-family: Calibri;
+			panose-1: 2 15 5 2 2 2 4 3 2 4;
+		}
 
-                        </div>
-                        <div class="phone">	<span class="fa fa-mobile"></span>
-	<a href="tel:+55 11 992742453">+55 11 992742453</a>
+		@font-face {
+			font-family: Georgia;
+			panose-1: 2 4 5 2 5 4 5 2 3 3;
+		}
 
-                        </div>
-        </div>
-        <div id="profiles">
-            <div class="item">
-                <div class="username">	<span class="fa fa-linkedin linkedin social"></span>
-	<span class="url">
-    						<a target="_blank" href="https://br.linkedin.com/in/ricardo-sarto-59919b88">Ricardo Sarto</a>
-    					</span> 
-                </div>
-            </div>
-            <div class="item">
-                <div class="username">	<span class="fa fa-github github social"></span>
-	<span class="url">
-    						<a target="_blank" href="https://github.com/rssarto">rssarto</a>
-    					</span> 
-                </div>
-            </div>
-        </div>
-        </header>
-        <section class="section main-summary">
-            <section>
-                <div>
-                    <p>I have double citizenship - Brazilian and Italian. I&#39;m an IT Professional
-                        with more than 12 years experience working with system development. Strong
-                        experience in the Insurance industry where I developed my entire career.
-                        In the last 4 years I have been playing as a Technical Leader in a team
-                        of 5 people. Supporting the team collaboration and targeting the company&#39;s
-                        goals. Experienced in integrating systems using services. Hands on experience
-                        in core Java 7, Jquery, Spring Boot and ORM Hibernate.</p>
-                </div>
-            </section>
-        </section>
-        <section class="section margin1">
-            <header>
-                	<h2 class='section-title'>Skills</h2>
+		@font-face {
+			font-family: "Proxima Nova";
+		}
 
-            </header>
-            <section id="skills">
-                <div class="item">
-                    	<h3 class="name">
-    				Development
-    			</h3>
+		@font-face {
+			font-family: Roboto;
+			panose-1: 0 0 0 0 0 0 0 0 0 0;
+		}
 
-                    <div class="level ">	<em></em>
+		@font-face {
+			font-family: "Noto Sans Symbols";
+		}
 
-                        <div class="bar"></div>
-                    </div>
-                    <ul class="keywords">
-                        <li>Java Core</li>
-                        <li>Spring framework</li>
-                        <li>Spring MVC</li>
-                        <li>Hibernate</li>
-                        <li>Maven</li>
-                        <li>Tomcat</li>
-                        <li>Glassfish</li>
-                        <li>AspectJ</li>
-                        <li>Apache POI</li>
-                        <li>Travis CI</li>
-                        <li>Heroku</li>
-                        <li>Docker</li>
-                        <li>XML</li>
-                        <li>XPath</li>
-                        <li>XSLT</li>
-                        <li>GIT</li>
-                        <li>NPM - Node package manager</li>
-                        <li>GitHub</li>
-                        <li>BitBucket</li>
-                    </ul>
-                </div>
-                <div class="item">
-                    	<h3 class="name">
-    				SQL
-    			</h3>
+		@font-face {
+			font-family: "Liberation Sans";
+			panose-1: 0 0 0 0 0 0 0 0 0 0;
+		}
 
-                    <div class="level ">	<em></em>
+		@font-face {
+			font-family: "Droid Sans Fallback";
+			panose-1: 0 0 0 0 0 0 0 0 0 0;
+		}
 
-                        <div class="bar"></div>
-                    </div>
-                    <ul class="keywords">
-                        <li>Oracle 11g</li>
-                        <li>PostgreSQL</li>
-                        <li>Informix</li>
-                    </ul>
-                </div>
-                <div class="item">
-                    	<h3 class="name">
-    				Tools
-    			</h3>
+		@font-face {
+			font-family: "Droid Sans Devanagari";
+			panose-1: 0 0 0 0 0 0 0 0 0 0;
+		}
 
-                    <div class="level ">	<em></em>
+		/* Style Definitions */
+		p.MsoNormal,
+		li.MsoNormal,
+		div.MsoNormal {
+			margin-top: 0in;
+			margin-right: 0in;
+			margin-bottom: 10.0pt;
+			margin-left: 0in;
+			line-height: 115%;
+			font-size: 11.0pt;
+			font-family: "Calibri", sans-serif;
+		}
 
-                        <div class="bar"></div>
-                    </div>
-                    <ul class="keywords">
-                        <li>Eclipse</li>
-                        <li>Git</li>
-                        <li>Soap UI</li>
-                        <li>Rational Application Developer (RAD)</li>
-                        <li>Sybase Power Designer</li>
-                        <li>Atlassian JIRA</li>
-                        <li>Rational Team Concert</li>
-                        <li>CVS</li>
-                        <li>Microsoft Office</li>
-                        <li>Visual Studio Code</li>
-                    </ul>
-                </div>
-                <div class="item">
-                    	<h3 class="name">
-    				Spring
-    			</h3>
+		h1 {
+			margin-top: 24.0pt;
+			margin-right: 0in;
+			margin-bottom: 6.0pt;
+			margin-left: 0in;
+			page-break-after: avoid;
+			font-size: 24.0pt;
+			font-family: "Calibri", sans-serif;
+		}
 
-                    <div class="level ">	<em></em>
+		h2 {
+			margin-top: .25in;
+			margin-right: 0in;
+			margin-bottom: 4.0pt;
+			margin-left: 0in;
+			page-break-after: avoid;
+			font-size: 18.0pt;
+			font-family: "Calibri", sans-serif;
+		}
 
-                        <div class="bar"></div>
-                    </div>
-                    <ul class="keywords">
-                        <li>ORM Hibernate</li>
-                        <li>Spring MVC</li>
-                        <li>Spring Boot</li>
-                        <li>Spring Core</li>
-                        <li>Spring Security</li>
-                        <li>JPA</li>
-                    </ul>
-                </div>
-                <div class="item">
-                    	<h3 class="name">
-    				Web
-    			</h3>
+		p.MsoTitle,
+		li.MsoTitle,
+		div.MsoTitle {
+			margin-top: 24.0pt;
+			margin-right: 0in;
+			margin-bottom: 6.0pt;
+			margin-left: 0in;
+			page-break-after: avoid;
+			font-size: 36.0pt;
+			font-family: "Calibri", sans-serif;
+			font-weight: bold;
+		}
 
-                    <div class="level ">	<em></em>
+		p.MsoSubtitle,
+		li.MsoSubtitle,
+		div.MsoSubtitle {
+			margin-top: .25in;
+			margin-right: 0in;
+			margin-bottom: 4.0pt;
+			margin-left: 0in;
+			page-break-after: avoid;
+			font-size: 24.0pt;
+			font-family: "Georgia", serif;
+			color: #666666;
+			font-style: italic;
+		}
 
-                        <div class="bar"></div>
-                    </div>
-                    <ul class="keywords">
-                        <li>Angular 6</li>
-                        <li>TypeScript</li>
-                        <li>HTML</li>
-                        <li>JavaScript</li>
-                        <li>Jquery</li>
-                        <li>Bootstrap</li>
-                        <li>CSS</li>
-                    </ul>
-                </div>
-            </section>
-        </section>
-        <section class="section">
-            <header>
-                 <h2 class='section-title'>Work Experience <span class="item-count">(4)</span></h2>
+		p.LO-normal,
+		li.LO-normal,
+		div.LO-normal {
+			mso-style-name: LO-normal;
+			margin-top: 0in;
+			margin-right: 0in;
+			margin-bottom: 10.0pt;
+			margin-left: 0in;
+			line-height: 115%;
+			font-size: 11.0pt;
+			font-family: "Calibri", sans-serif;
+		}
 
-            </header>
-            <section id="work">
-                <section class="work-item">
-                    <input id="work-item-1" type="checkbox" class="toggle-item" checked="checked"/>
-                    <label for="work-item-1"></label>
-                    <header>
-                        <div class="position">Technical Leader</div>
-                        <div class="company">Porto Seguro Insurance Company</div>
-                        <div class="date"> <span class="startDate">October 2012</span> 	<span class="endDate">- Current</span>
+		.MsoChpDefault {
+			font-family: "Calibri", sans-serif;
+		}
 
-                        </div>
-                    </header>	<span class="website">
-        		<a target="_blank" href="http://www.portoseguro.com.br/">http://www.portoseguro.com.br/</a>
-        	</span> 
-                    <div class="item" id="work-item">
-                        <div class="summary">
-                            <p>
-                                <p>Currently I&#39;m a Technical Leader for a 5 people team. I&#39;m responsible
-                                    for the online platform used by insurance brokers to calculate the price
-                                    and hire insurance products so it&#39;s a mission critical system. Daily
-                                    this system calculates more then 60,000 requests and is the entrance for
-                                    8,000 new business daily.</p>
-                                <p>The system is built upon the java platform, uses Oracle 11g as DBMS and
-                                    also applies the parameterized concept to generate the view content. In
-                                    the past it used static PDF forms for printing so I created a funcionality
-                                    to generate PDF dinamically using an IText based API in conjunction with
-                                    XSLT.</p>
-                                <p>The system also has integration with many backend systems to calculate
-                                    and hire insurance products. In the past was mandatory the backend systems
-                                    to implement a default interface for the integration to be viable. To end
-                                    up with this coupling I created a core component using Java resources and
-                                    XSLT so now the system can call any HTTP based service (SOAP or Rest).</p>
-                                <p>As the traffic increases the business area needs information to define
-                                    the Company&#39;s strategy. To solve this paradigm I created a solution
-                                    where the IT department can schedule a report extraction based in the business
-                                    area request. There is a batch process that executes the extraction and
-                                    sends the report to the client.</p>
-                                <p>For the view layer the system uses a lot of JavaScript, so I got strong
-                                    experience using JavaScript (DOM) and Jquery framework to create and manipulate
-                                    html elements, to validate form fields and also to make AJAX calls (GET
-                                    / POST) to send and retrieve data (normally XML content) from server side,
-                                    so it&#39;s common to use DOM/Jquery to parse XML content.</p>
-                                <p>Currently I’m creating a system to automate the web application for testing
-                                    purposes. For that I’m using Java, Selenium, AspectJ and Apache POI. The
-                                    main idea is to have all the steps and data for testing parameterized inside
-                                    a Mircrosoft Excel Sheet so it can be read and used to automate the web
-                                    application. This initiative brings flexibility and decreases the time
-                                    to execute new tests</p>
-                            </p>
-                        </div>
-                        <ul class="highlights">
-                            <li>
-                                <p>Java</p>
-                            </li>
-                            <li>
-                                <p>SOAP Web Services</p>
-                            </li>
-                            <li>
-                                <p>Jquery</p>
-                            </li>
-                            <li>
-                                <p>XSLT</p>
-                            </li>
-                            <li>
-                                <p>Oracle 11g DBMS</p>
-                            </li>
-                            <li>
-                                <p>JSON</p>
-                            </li>
-                            <li>
-                                <p>PDF generation</p>
-                            </li>
-                            <li>
-                                <p>E-mail sending</p>
-                            </li>
-                            <li>
-                                <p>Selenium – Web browser</p>
-                            </li>
-                            <li>
-                                <p>Junit</p>
-                            </li>
-                            <li>
-                                <p>Apache POI</p>
-                            </li>
-                            <li>
-                                <p>AspectJ</p>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-                <section class="work-item">
-                    <input id="work-item-0" type="checkbox" class="toggle-item" checked="checked"
-                    />
-                    <label for="work-item-0"></label>
-                    <header>
-                        <div class="position">Java Software Developer (remote)</div>
-                        <div class="company">M-Exchange AG, Munich Area, Germany</div>
-                        <div class="date"> <span class="startDate">February 2016</span> 	<span class="endDate">- July 2016</span> 
-                        </div>
-                    </header>	<span class="website">
-        		<a target="_blank" href="http://www.m-exchange.de/">http://www.m-exchange.de/</a>
-        	</span> 
-                    <div class="item" id="work-item">
-                        <div class="summary">
-                            <p>
-                                <p>I accepted this challenge to increase my professional experience and being
-                                    in touch with new technologies. M-exchange&#39;s mainly business is to
-                                    offer a personalized e-commerce platform for its clients.</p>
-                                <p>The system is a Single Page Application that uses Jquery and JavaScript
-                                    for the front-end and Spring Framework for the server side. I improved
-                                    my knowleged on Spring MVC and how to use it to build REST services.</p>
-                                <p>In additon the system used Hibernate JPA provider and Oracle 11g as RDBMS.</p>
-                                <p>The work tasks used to be sent by a Technical Leader in JIRA and we used
-                                    to have weekly meetings for report. Most of the tasks involved doing changes
-                                    in the database as creating new tables and removing other ones.</p>
-                                <p>One time I had to develop a report solution so the user could pick up
-                                    the columns for the report and also define some filters. To solve this
-                                    necessity I created a module where the user could define the columns and
-                                    also create the filters for the report query. After the report was created
-                                    by the user it was processed by a background service that was responsible
-                                    to execute the report query and generate an Excel file and send it by e-mail
-                                    to the user.</p>
-                                <p>As the system is a Single Page Application was common to use JavaScript
-                                    and Jquery to create HTML content and also calling REST services (GET,
-                                    POST, PUT and DELETE) with JSON objects and callback functions.</p>
-                            </p>
-                        </div>
-                        <ul class="highlights">
-                            <li>
-                                <p>Spring Framework &amp; Spring MVC</p>
-                            </li>
-                            <li>
-                                <p>Hibernate &amp; HQL</p>
-                            </li>
-                            <li>
-                                <p>JQuery</p>
-                            </li>
-                            <li>
-                                <p>Oracle RDBMS</p>
-                            </li>
-                            <li>
-                                <p>HTML 5</p>
-                            </li>
-                            <li>
-                                <p>Hibernate</p>
-                            </li>
-                            <li>
-                                <p>GIT</p>
-                            </li>
-                            <li>
-                                <p>Atlassian JIRA</p>
-                            </li>
-                        </ul>
-                    </div>
-                </section>                
-                <section class="work-item">
-                    <input id="work-item-2" type="checkbox" class="toggle-item" checked="checked"/>
-                    <label for="work-item-2"></label>
-                    <header>
-                        <div class="position">Analyst Developer</div>
-                        <div class="company">Porto Seguro Insurance Company</div>
-                        <div class="date"> <span class="startDate">October 2007</span> 	<span class="endDate">- October 2012</span> 
-                        </div>
-                    </header>	<span class="website">
-        		<a target="_blank" href="http://www.portoseguro.com.br/">http://www.portoseguro.com.br/</a>
-        	</span> 
-                    <div class="item" id="work-item">
-                        <div class="summary">
-                            <p>
-                                <p>After three years experience with the IVR platform I received my new challenge
-                                    - mantain the Client&#39;s Portal. Built upon the Java Platform the Portal
-                                    was used by clients to access a variety of services. During my time with
-                                    the Portal I had the opportunity to create SOAP Web Services to integrate
-                                    with backend systems. I also was in touch with LDAP repository managing
-                                    the roles and permission used by the security layer to autorize user&#39;s
-                                    access to services. The system&#39;s front-end used JSP with Struts Framework.
-                                    In additon the Portal used Informix DBMS.</p>
-                            </p>
-                        </div>
-                        <ul class="highlights">
-                            <li>
-                                <p>Java</p>
-                            </li>
-                            <li>
-                                <p>SOAP Web Services</p>
-                            </li>
-                            <li>
-                                <p>LDAP Repository</p>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-                <section class="work-item">
-                    <input id="work-item-3" type="checkbox" class="toggle-item" checked="checked"/>
-                    <label for="work-item-3"></label>
-                    <header>
-                        <div class="position">Developer</div>
-                        <div class="company">Porto Seguro Insurance Company</div>
-                        <div class="date"> <span class="startDate">May 2004</span> 	<span class="endDate">- October 2007</span> 
-                        </div>
-                    </header>	<span class="website">
-        		<a target="_blank" href="http://www.portoseguro.com.br/">http://www.portoseguro.com.br/</a>
-        	</span> 
-                    <div class="item" id="work-item">
-                        <div class="summary">
-                            <p>
-                                <p>My first challenge was to mantain the existing IVR platform. The Company&#39;s
-                                    IVR platform is a mission critical system supporting incoming calls from
-                                    clients and insurance brokers. As I accepted the challenge I experienced
-                                    Visual Basic language and also Informix DBMS. After some time I receive
-                                    my second challenge, I needed to rebuild the entire IVR platform using
-                                    a new approach. In this project I got involved in all development lifecycle
-                                    from design, testing and deploy in production. I created a new platform
-                                    where was possible to build new IVR applications just using parameterized
-                                    configuration. The new approach contributed to reduce time and effort to
-                                    create new IVR applicaton. I was in touch with technologies like Sybase
-                                    Power Builder, Visual Basic, XML, XSLT. To integrate the IVR platform with
-                                    backend systems I needed to build core components to communicate with MQ
-                                    Series, SOAP Web Services and DCOM components.</p>
-                            </p>
-                        </div>
-                        <ul class="highlights">
-                            <li>
-                                <p>Visual Basic 6.0</p>
-                            </li>
-                            <li>
-                                <p>Sybase Power Builder</p>
-                            </li>
-                            <li>
-                                <p>XML</p>
-                            </li>
-                            <li>
-                                <p>XSLT</p>
-                            </li>
-                            <li>
-                                <p>Informix RDBMS</p>
-                            </li>
-                            <li>
-                                <p>SOAP Web Services</p>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-            </section>
-        </section>
-        <section class="section">
-            <header>
-                 <h2 class='section-title'>Education <span class="item-count">(2)</span></h2>
+		.MsoPapDefault {
+			margin-bottom: 10.0pt;
+			line-height: 115%;
+		}
 
-            </header>
-            <section id="education">
-                <section class="education-item">
-                    <header>
-                        <div class="header-left">
-                            <div class="studyType">Engineer</div>
-                            <div class="area">Post Graduation in Analysis and System Projects</div>
-                            <div class="institution">Faculdade de Tecnologia de São Paulo</div>
-                        </div>
-                        <div class="date"> <span class="startDate">
-              2005
-              </span>
- <span class="endDate">
-              - 2005
-              </span>
+		div.WordSection1 {
+			size: 595.3pt 841.9pt;
+			margin: 70.85pt 85.05pt 70.85pt 85.05pt;
+		}
 
-                        </div>
-                    </header>
-                    <ul class="courses">
-                        <li></li>
-                    </ul>
-                    <div class="item"></div>
-                </section>
-                <section class="education-item">
-                    <header>
-                        <div class="header-left">
-                            <div class="studyType">B.A.</div>
-                            <div class="area">Information Technology</div>
-                            <div class="institution">Faculdades Integradas Tibiriça</div>
-                        </div>
-                        <div class="date"> <span class="startDate">
-              2004
-              </span>
- <span class="endDate">
-              - 2002
-              </span>
+		/* List Definitions */
+		ol {
+			margin-bottom: 0in;
+		}
 
-                        </div>
-                    </header>
-                    <ul class="courses">
-                        <li></li>
-                    </ul>
-                    <div class="item"></div>
-                </section>
-            </section>
-        </section>
-        <section class="section">
-            <header>
-                 <h2 class='section-title'>Awards</h2>
+		ul {
+			margin-bottom: 0in;
+		}
+		-->
+	</style>
 
-            </header>
-            <section id="awards">
-                <section class="award-item">
-                    <input id="award-item-0" type="checkbox" class="toggle-item" checked="checked"
-                    />
-                    <label for="award-item-0"></label>
-                    <header>
-                        <div class="header-left">
-                            <div class="title">Oracle Certified Professional, Java SE 7 Programmer</div>
-                            <div class="awarder">Oracle</div>
-                        </div>
-                        <div class="date">2017</div>
-                    </header>
-                    <div class="item">
-                        <div class="summary">
-                            <p>
-                                <p>Java Language certification.</p>
-                            </p>
-                        </div>
-                    </div>
-                </section>
-                <section class="award-item">
-                    <input id="award-item-1" type="checkbox" class="toggle-item" checked="checked"/>
-                    <label for="award-item-1"></label>
-                    <header>
-                        <div class="header-left">
-                            <div class="title">M101J – MongoDB for Java Developers</div>
-                            <div class="awarder">MongoDB University</div>
-                        </div>
-                        <div class="date">2017</div>
-                    </header>
-                    <div class="item">
-                        <div class="summary">
-                            <p>
-                                <p>No sql database.</p>
-                            </p>
-                        </div>
-                    </div>
-                </section>
-                <section class="award-item">
-                    <input id="award-item-2" type="checkbox" class="toggle-item" checked="checked"/>
-                    <label for="award-item-2"></label>
-                    <header>
-                        <div class="header-left">
-                            <div class="title">Certified Associate Java SE 7 Programmer</div>
-                            <div class="awarder">Oracle</div>
-                        </div>
-                        <div class="date">2015</div>
-                    </header>
-                    <div class="item">
-                        <div class="summary">
-                            <p>
-                                <p>Java Language certification.</p>
-                            </p>
-                        </div>
-                    </div>
-                </section>
-            </section>
-        </section>
-        <section class="section margin1">
-            <header>
-                 <h2 class='section-title'>Languages</h2>
+</head>
 
-            </header>
-            <section id="languages">
-                <div class="display">
-                     <h3 class="language">
-            Portuguese
-          </h3>
+<body lang=EN-US>
 
-                    <div class="item">
-                        <div class="level fluency native speaker"> <em>Native speaker</em>
+	<div class=WordSection1>
 
-                            <div class="bar"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="display">
-                     <h3 class="language">
-            English
-          </h3>
+		<p class=MsoTitle style='margin:0in;line-height:150%'><a name="_heading=h.1dmzj1gmrvlj"></a><span lang=PT-BR
+				style='font-size:18.0pt;
+line-height:150%;font-family:"Proxima Nova";color:#8E7CC3'>Ricardo Soares Sarto
+			</span></p>
 
-                    <div class="item">
-                        <div class="level fluency advanced"> <em>Advanced</em>
+		<table class=1 border=0 cellspacing=0 cellpadding=0 width=800 style='margin-left:
+ .1pt;border-collapse:collapse'>
+			<tr>
+				<td width=283 valign=top style='width:212.6pt;border:solid white 1.0pt;
+  padding:0in 0in 0in 0in'>
+					<p class=MsoSubtitle style='margin:0in;line-height:150%'><span lang=PT-BR style='font-size:12.0pt;line-height:150%;font-family:"Proxima Nova";
+  color:#434343'>Full Stack Developer</span><a name="_heading=h.2n7z2fimay26"></a><span lang=PT-BR
+							style='font-size:12.0pt;line-height:150%;font-family:"Proxima Nova"'><br>
+							<br>
+						</span></p>
+					<p class=MsoSubtitle style='margin:0in;line-height:150%'><span lang=PT-BR><a
+								href="http://www.linkedin.com/in/your-linkedin/"><span
+									style='font-size:11.0pt;
+  line-height:150%;font-family:"Proxima Nova";color:#1155CC;font-style:normal'>www.linkedin.com/in/rssarto</span></a></span></p>
+					<p class=LO-normal style='margin-bottom:8.0pt;line-height:150%'><span lang=PT-BR><a
+								href="http://github.com/yourgithub"><span style='font-family:
+  "Proxima Nova";color:#1155CC'>github.com/rssarto</span></a></span></p>
+				</td>
+				<td width=283 valign=bottom style='width:212.55pt;border:solid white 1.0pt;
+  border-left:none;padding:0in 0in 0in 0in'>
+					<p class=LO-normal align=right style='margin-bottom:0in;text-align:right;
+  line-height:150%'><span lang=PT-BR style='font-family:"Proxima Nova";
+  color:#666666'>São Paulo, Brazil</span></p>
+					<p class=LO-normal align=right style='margin-bottom:0in;text-align:right;
+  line-height:150%'><span lang=PT-BR style='font-family:"Proxima Nova";
+  color:#666666'>ricardo.soares.sarto@gmail.com</span></p>
+					<p class=LO-normal align=right style='margin-bottom:8.0pt;text-align:right;
+  line-height:150%'><span lang=PT-BR style='font-family:"Proxima Nova";
+  color:#666666'>+55 11 99274 2453</span></p>
+				</td>
+				<td>
+					<img class="picture" src="ricardo.jpg" alt="Ricardo Soares Sarto" style="width: 150px;"/>
+				</td>
+			</tr>
+		</table>
 
-                            <div class="bar"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="display">
-                     <h3 class="language">
-            French
-          </h3>
+		<h1 style='margin:0in;line-height:150%'><a name="_heading=h.k7h1tr93a8k8"></a><span lang=PT-BR style='font-size:11.0pt;line-height:150%;font-family:"Proxima Nova";
+color:#999999;font-weight:normal'>WORK EXPERIENCE </span></h1>
 
-                    <div class="item">
-                        <div class="level fluency intermediate"> <em>Intermediate</em>
+		<h2 style='margin:0in;line-height:150%'><span lang=PT-BR style='font-size:12.0pt;
+line-height:150%;font-family:"Proxima Nova";color:#434343'>Software Development
+				Specialist, Daitan Group </span><span lang=PT-BR style='font-size:12.0pt;
+line-height:150%;font-family:"Proxima Nova";color:#434343;font-weight:normal'>-
+				<i>08/2019  - present - </i>São Paulo, Brazil</span></h2>
 
-                            <div class="bar"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </section>
-    </body>
+		<p class=LO-normal style='margin-bottom:8.0pt;text-align:justify'><i><span lang=PT-BR style='font-size:12.0pt;line-height:115%;font-family:"Arial",sans-serif;
+color:#434343'>Daitan is a Software Development consultancy that provides full
+					lifecycle software product development.</span></i></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.25in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+				</span></span><span lang=PT-BR style='font-size:12.0pt;line-height:112%;
+font-family:"Proxima Nova"'>Write unit and integration tests;</span></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.25in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>Collaborate
+				with testers in development of test cases;</span></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.25in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>Collaborate
+				with product owners on user story refinement;</span></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.25in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>Participate
+				in knowledge sharing activities with colleagues;</span></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.25in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>Experience
+				with distributed (multi-tiered) systems and relational databases;</span></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.25in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>Design
+				and ensure that requirements and proposed solutions aligned with technology
+				domains and business area strategic directions;</span></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.25in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>Contribute
+				to project planning to define activities;</span></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.25in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>Develop
+				/ modify / configure / integrate solution to meet design;</span></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.25in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>Participate
+				in architecture definition activities;</span></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.25in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+				</span></span><span lang=PT-BR style='font-size:12.0pt;line-height:112%;
+font-family:"Proxima Nova"'>Hands on experience with microservice architecture;</span></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.25in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+				</span></span><span lang=PT-BR style='font-size:12.0pt;line-height:112%;
+font-family:"Proxima Nova"'>Agile methodology with 2 weeks sprints and software
+				development best practices (TDD, Code reviews);</span></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.25in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+				</span></span><span lang=PT-BR style='font-size:12.0pt;line-height:112%;
+font-family:"Proxima Nova"'>International exposure working for clients in the
+				United States.</span></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.5in;text-align:justify;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>&nbsp;</span></p>
+
+		<h2 style='margin:0in;line-height:150%'><a name="_heading=h.j7e3lcsf3w98"></a><span lang=PT-BR style='font-size:12.0pt;line-height:150%;font-family:"Proxima Nova";
+color:#434343'>Full Stack Developer, Porto Seguro Insurance Company </span><span lang=PT-BR style='font-size:12.0pt;line-height:150%;font-family:"Proxima Nova";
+color:#434343;font-weight:normal'>- <i>02/2019  - 08/2019 - </i>São Paulo,
+				Brazil</span></h2>
+
+		<p class=LO-normal style='margin-bottom:8.0pt;text-align:justify'><i><span lang=PT-BR
+					style='font-family:"Arial",sans-serif;color:#434343'>Porto Seguro is
+					one of the biggest and most admired insurance company in Brazil. It provides a
+					complete chain of products not only limited to insurance but acting in other
+					fields like Credit Cards, Financing, Alarm and Monitoring and others.</span></i></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.25in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>Built
+				and maintained an application to automate the deployment of the Calculation API
+				in the cloud. The Application Front End was built upon Angular 7 and the
+				Backend was reachable through a REST API using Spring Boot. The Backend saves
+				the Calculation API in AWS S3 and record the deployment request in a MongoDB
+				database. The application increased the agility for the business when deploying
+				new versions of the Calculation API.</span></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.25in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>Implementation
+				of the cloud authorizer to control access to the services hosted in AWS. Using
+				Amazon API Gateway, Lambda and MongoDb the authorizer was able to apply the
+				authorization process to the requests coming to the REST Services. The
+				authorizer increased the reliability and security of the services.</span></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.25in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>Creation
+				of a new Node for our Node-red environment to clone payload attributes because
+				the native Change Node was only able to do that by referencing the payload
+				attributes. As a result we were able to preserve the payload attributes with no
+				risk they being changed by a referenced variable.</span></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.25in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>Creation
+				of an application to perform regression Tests in REST APIs. Using Spring Boot
+				multi thread concept the application was able to execute the test cases in
+				parallel saving considerable time and increasing the quality and reliability of
+				the services to calculate insurance price.</span></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.25in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>Implementation
+				of pipelines to deploy Front End applications from BitBucket repository to AWS
+				S3 Service. This measure increased productivity and saved time with manual
+				activities.</span></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.25in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>Initiated
+				the culture of using TDD when developing new applications. This action was well
+				accepted by the team and increased the quality of the services provided by the
+				IT area.</span></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.25in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>Development
+				of a routine to export documents from AWS Elastic Search service to S3 service.
+				Multithreaded techniques were used as millions of documents needed to be
+				transferred in a 12 hours batch processing window. As a result the company got
+				a better management over data in the Elastic Search Service keeping only data
+				necessary to business operation for the last 3 months.</span></p>
+
+		<h2 style='margin:0in'><a name="_heading=h.kctawkmkuak6"></a><span lang=PT-BR
+				style='font-size:12.0pt;font-family:"Proxima Nova";color:#434343'>&nbsp;</span></h2>
+
+		<h2 style='margin:0in;line-height:150%'><a name="_heading=h.sbe7v9n9rk9x"></a><span lang=PT-BR style='font-size:12.0pt;line-height:150%;font-family:"Proxima Nova";
+color:#434343'>Technical Leader, Porto Seguro Insurance Company</span><span lang=PT-BR style='font-size:12.0pt;line-height:150%;font-family:"Proxima Nova";
+color:#434343;font-weight:normal'> - <i>10/2012 - 01/2019 - </i>São Paulo,
+				Brazil</span></h2>
+
+		<p class=LO-normal style='margin-bottom:8.0pt;text-align:justify'><i><span lang=PT-BR
+					style='font-family:"Arial",sans-serif;color:#434343'>Porto Seguro is
+					one of the biggest and most admired insurance company in Brazil. It provides a
+					complete chain of products not only limited to insurance but acting in other
+					fields like Credit Cards, Financing, Alarm and Monitoring and others.</span></i></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.25in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>Development
+				of a integration component to call Soap and Rest Services based in the product
+				configuration. It is used in large scale to call backend services, the
+				solutions offered flexibility when creating new integrations as it allows
+				transformation in the payload and in the result.</span></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.25in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>Development
+				of a component to  generate pdf documents based in the product configuration.
+				It established a pattern to develop new documents allowing content
+				customization. As a result it increased the IT productivity when developing new
+				pdf documents.</span></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.25in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>Development
+				of a solution to extract reports from the production database. The IT team can
+				configure the content and schedule the extraction and every night the reports
+				are extracted and sent to the IT team or directly to clients. As a result the
+				solution decreased the time spent creating reports manually.</span></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.25in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>Development
+				of a Trace solution for troubleshooting purposes. It consisted in an interface
+				where the IT team can search all the integration results related to a ticket
+				number.</span></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.25in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>Participation
+				in a program to sell new products in the e-commerce platform. As a result the
+				company launched more than 30 products in the e-commerce platform. It
+				extinguished manual activities that were executed by clients to sell these
+				products.</span></p>
+
+		<h2 style='margin:0in;line-height:150%'><a name="_heading=h.qkanjanr0ep2"></a><span lang=PT-BR style='font-size:12.0pt;line-height:150%;font-family:"Proxima Nova";
+color:#434343'>Java Developer (remote), M-Exchange AG</span><span lang=PT-BR style='font-size:12.0pt;line-height:150%;font-family:"Proxima Nova";color:#434343;
+font-weight:normal'> - <i>02/2016 - 07/2016 - </i>São Paulo, Brazil</span></h2>
+
+		<p class=LO-normal style='margin-bottom:8.0pt;text-align:justify'><i><span lang=PT-BR
+					style='font-family:"Arial",sans-serif;color:#434343'>M-Exchange
+					offers its customers solutions for optimizing all operational procurement
+					processes. The portfolio consists of procurement platform, consulting services,
+					supplier integration and invoice management.</span></i></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.25in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>Maintained
+				the procurement system following the instructions defined  by the Technical
+				Leader.</span></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.25in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>Development
+				of a solution for customizing report extraction accordingly business needs. As
+				a flexible solution the user can customize the report data and period of extraction
+				and also have the option to paginate the results or generate all the report
+				content in the background and receive it later.</span></p>
+
+		<h2 style='margin:0in;line-height:150%'><a name="_heading=h.yqxmr3ed0c0l"></a><span lang=PT-BR style='font-size:12.0pt;line-height:150%;font-family:"Proxima Nova";
+color:#434343'>Analyst Developer, Porto Seguro Insurance Company</span><span lang=PT-BR style='font-size:12.0pt;line-height:150%;font-family:"Proxima Nova";
+color:#434343;font-weight:normal'> - <i>05/2004 - 10/2012 - </i>São Paulo,
+				Brazil</span></h2>
+
+		<p class=LO-normal style='margin-bottom:8.0pt;text-align:justify'><i><span lang=PT-BR
+					style='font-family:"Arial",sans-serif;color:#434343'>Porto Seguro is
+					one of the biggest and most admired insurance company in Brazil. It provides a
+					complete chain of products not only limited to insurance but acting in other
+					fields like Credit Cards, Financing, Alarm and Monitoring and others.</span></i></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.5in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>Maintained
+				the existing IVR platform. The Company's IVR platform was a mission critical
+				system supporting incoming calls from clients and insurance brokers. </span></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.5in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>Development
+				of a new IVR platform where was possible to build new IVR applications just
+				using parameterized configuration. The new approach contributed to reduce time
+				and effort to create new IVR application.</span></p>
+
+		<p class=LO-normal style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.5in;text-align:justify;text-indent:-.25in;line-height:112%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>⇢<span
+					style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang=PT-BR
+				style='font-size:12.0pt;line-height:112%;font-family:"Proxima Nova"'>Maintained
+				the Client's Portal. Built upon the Java Platform the Portal was used by
+				clients to access a variety of services.</span></p>
+
+		<h1 style='margin:0in'><a name="_heading=h.72i3ikr4zjg9"></a><span lang=PT-BR style='font-size:11.0pt;font-family:"Proxima Nova";color:#999999;font-weight:
+normal'>&nbsp;</span></h1>
+
+		<h1 style='margin:0in;line-height:150%'><a name="_heading=h.s296xj4fjnpf"></a><span lang=PT-BR style='font-size:11.0pt;line-height:150%;font-family:"Proxima Nova";
+color:#999999;font-weight:normal'>SIDE PROJECTS </span></h1>
+
+		<p class=LO-normal style='margin-bottom:0in;text-align:justify;line-height:
+150%'><b><span lang=PT-BR style='font-size:12.0pt;line-height:150%;font-family:
+"Proxima Nova";color:#434343'>Currency converter:</span></b><b><span lang=PT-BR style='font-size:12.0pt;line-height:150%;font-family:"Proxima Nova";
+color:#3C78D8'> </span></b><span lang=PT-BR style='font-size:12.0pt;line-height:
+150%;font-family:"Proxima Nova"'>A solution to convert currencies from around
+				the world. Available at </span><span lang=PT-BR><a
+					href="https://currency-converter-web.herokuapp.com/"><span
+						style='font-size:
+12.0pt;line-height:150%;font-family:"Proxima Nova";color:#1155CC'>https://currency-converter-web.herokuapp.com/</span></a></span><span lang=PT-BR
+				style='font-size:12.0pt;line-height:150%;font-family:"Proxima Nova"'>.</span></p>
+
+		<p class=LO-normal style='margin-bottom:0in;text-align:justify;line-height:
+150%'><b><span lang=PT-BR style='font-size:12.0pt;line-height:150%;font-family:
+"Proxima Nova";color:#434343'>Health Management Application: </span></b><span lang=PT-BR style='font-size:12.0pt;line-height:150%;font-family:"Proxima Nova";
+color:#434343'>A solution to support Health Insurance management inside any
+				company. Applied microservice architecture using Spring Boot and also built a
+				CI/CD pipeline on Jenkins.</span></p>
+
+		<p class=LO-normal style='margin-bottom:0in;text-align:justify;line-height:
+150%'><span lang=PT-BR style='font-size:12.0pt;line-height:150%;font-family:
+"Proxima Nova";color:#434343'>&nbsp;</span></p>
+
+		<h1 style='margin:0in;line-height:150%'><a name="_heading=h.oid1t41wmfnb"></a><span lang=PT-BR style='font-size:11.0pt;line-height:150%;font-family:"Proxima Nova";
+color:#999999;font-weight:normal'>EDUCATION AND CERTIFICATES</span></h1>
+
+		<h2 style='margin:0in;line-height:150%'><a name="_heading=h.xc6j8q57avv5"></a><span lang=PT-BR style='font-size:12.0pt;line-height:150%;font-family:"Proxima Nova";
+color:#434343;font-weight:normal'>2020 </span><span lang=PT-BR
+				style='font-size:12.0pt;line-height:150%;font-family:"Proxima Nova";color:#434343'>Multi
+				cloud training</span><span lang=PT-BR style='font-size:12.0pt;line-height:150%;
+font-family:"Proxima Nova";color:#434343;font-weight:normal'>, The Cloud
+				BootCamp</span></h2>
+
+		<h2 style='margin:0in;line-height:150%'><a name="_heading=h.99u1h6naoenq"></a><span lang=PT-BR style='font-size:12.0pt;line-height:150%;font-family:"Proxima Nova";
+color:#434343;font-weight:normal'>2004</span><span lang=PT-BR style='font-size:
+12.0pt;line-height:150%;font-family:"Proxima Nova";color:#434343'> B.Sc. in
+				Information Technology</span><span lang=PT-BR style='font-size:12.0pt;
+line-height:150%;font-family:"Proxima Nova";color:#434343;font-weight:normal'>,
+				Faculdades Integradas Tibiriça</span></h2>
+
+		<h2 style='margin:0in;line-height:150%'><a name="_heading=h.wgj9cegquuog"></a><span lang=PT-BR style='font-size:12.0pt;line-height:150%;font-family:"Proxima Nova";
+color:#434343;font-weight:normal'>2005</span><span lang=PT-BR style='font-size:
+12.0pt;line-height:150%;font-family:"Proxima Nova";color:#434343'> Post
+				Graduation in Analysis and System Projects</span><span lang=PT-BR style='font-size:12.0pt;line-height:150%;font-family:"Proxima Nova";color:#434343;
+font-weight:normal'>, Faculdade de Tecnologia de São Paulo</span></h2>
+
+		<p class=LO-normal style='margin-bottom:0in'><b><span lang=PT-BR
+					style='font-size:12.0pt;line-height:115%;font-family:"Proxima Nova";color:#434343'>Certificate
+					in M121: The MongoDB Aggregation Framework - MongoDB University - 2019</span></b></p>
+
+		<p class=LO-normal style='margin-bottom:0in'><b><span lang=PT-BR
+					style='font-size:12.0pt;line-height:115%;font-family:"Proxima Nova";color:#434343'>Certificate
+					in Oracle Certified Professional, Java SE 7 Programmer - Oracle - 2017</span></b></p>
+
+		<p class=LO-normal style='margin-bottom:0in'><b><span lang=PT-BR
+					style='font-size:12.0pt;line-height:115%;font-family:"Proxima Nova";color:#434343'>Certificate
+					in M101J: MongoDB for Java Developers - MongoDB University - 2017</span></b></p>
+
+		<p class=LO-normal style='margin-bottom:0in'><b><span lang=PT-BR
+					style='font-size:12.0pt;line-height:115%;font-family:"Proxima Nova";color:#434343'>Certificate
+					in Oracle Certified Associate, Java SE 7 Programmer - Oracle - 2015</span></b></p>
+
+		<p class=LO-normal style='margin-bottom:0in;text-align:justify;line-height:
+normal'><span lang=PT-BR style='font-size:12.0pt;font-family:"Proxima Nova"'>&nbsp;</span></p>
+
+		<h1 style='margin:0in;line-height:150%'><a name="_heading=h.myykiug5b84q"></a><span lang=PT-BR style='font-size:11.0pt;line-height:150%;font-family:"Proxima Nova";
+color:#999999;font-weight:normal'>TECHNICAL SKILLS</span></h1>
+
+		<p class=LO-normal style='margin-bottom:0in;line-height:150%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:150%;font-family:"Proxima Nova"'>(1+
+				years): AWS (</span><span lang=PT-BR style='font-size:10.5pt;line-height:150%;
+font-family:Roboto;background:white'>EC2, Lambda, Api Gateway, IAM, S3,ELK</span><span lang=PT-BR
+				style='font-size:12.0pt;line-height:150%;font-family:"Proxima Nova"'>),
+				Rancher, Node Red, NodeJS, Mockito, Docker Hub, Angular 7, Atlassian Jira,
+				MongoDB, TDD, GitLab, BitBucket, TypeScript, Postgresql, RabbitMq, Liquibase,
+				OCI (IAM, Networking)</span></p>
+
+		<p class=LO-normal style='margin-bottom:0in;line-height:150%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:150%;font-family:"Proxima Nova"'>(2+
+				years): Junit, GIT, Spring Mvc, SpringBoot 2.0, Spring Cloud, Spring Data, JPA,
+				Hibernate, Rest Service, Linux, Windows, Docker</span></p>
+
+		<p class=LO-normal style='margin-bottom:0in;line-height:150%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:150%;font-family:"Proxima Nova"'>(6+
+				years): JavaScript, Jquery, HTML, SOAP, Java 8, Oracle, Informix, Windows</span></p>
+
+		<p class=LO-normal style='margin-bottom:0in;line-height:150%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:150%;font-family:"Proxima Nova"'>(Studying):
+				AWS Associate Developer Certification Exam</span></p>
+
+		<h1 style='margin:0in'><a name="_heading=h.bsibiqbbxbht"></a><span lang=PT-BR style='font-size:11.0pt;font-family:"Proxima Nova";color:#999999;font-weight:
+normal'>&nbsp;</span></h1>
+
+		<h1 style='margin:0in;line-height:150%'><a name="_heading=h.riugji1xlb3"></a><span lang=PT-BR style='font-size:11.0pt;line-height:150%;font-family:"Proxima Nova";
+color:#999999;font-weight:normal'>LANGUAGES</span></h1>
+
+		<p class=LO-normal style='margin-bottom:0in;line-height:150%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:150%;font-family:"Proxima Nova"'>English -
+				Advanced</span></p>
+
+		<p class=LO-normal style='margin-bottom:0in;line-height:150%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:150%;font-family:"Proxima Nova"'>Portuguese
+				- Native</span></p>
+
+		<p class=LO-normal style='margin-bottom:0in;line-height:150%'><span lang=PT-BR
+				style='font-size:12.0pt;line-height:150%;font-family:"Proxima Nova"'>French -
+				Beginner</span></p>
+
+		<p class=LO-normal><span lang=PT-BR>&nbsp;</span></p>
+
+	</div>
+
+</body>
 
 </html>
